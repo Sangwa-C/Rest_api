@@ -3,12 +3,19 @@ package Organisation;
 import java.util.Objects;
 
 public class News {
-    private int id;
+    private int NewsId;
+    private String heading;
     private String body;
 
-    public int getId() { return id; }
+    public int getNewsId() { return NewsId; }
 
-    public void setId(int id) { this.id = id; }
+    public String getHeading() {
+        return heading;
+    }
+
+    public void setHeading(String heading) {
+        this.heading = heading;
+    }
 
     public String getBody() { return body; }
 
@@ -19,12 +26,13 @@ public class News {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         News news = (News) o;
-        return id == news.id &&
+        return NewsId == news.NewsId &&
+                Objects.equals(heading, news.heading) &&
                 Objects.equals(body, news.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, body);
+        return Objects.hash(NewsId, heading, body);
     }
 }

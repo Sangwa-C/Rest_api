@@ -3,18 +3,18 @@ package Organisation;
 import java.util.Objects;
 
 public class Departments {
-    private int id;
+    private int DepId;
     private String DName;
     private String DDescription;
     private int NEmployees;
 
 
-    public int getId() {
-        return id;
+    public int getDepId() {
+        return DepId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDepId(int id) {
+        this.DepId = DepId;
     }
 
     public String getDName() {
@@ -50,7 +50,7 @@ public class Departments {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Departments that = (Departments) o;
-        return id == that.id &&
+        return DepId == that.DepId &&
                 NEmployees == that.NEmployees &&
                 Objects.equals(DName, that.DName) &&
                 Objects.equals(DDescription, that.DDescription);
@@ -58,6 +58,6 @@ public class Departments {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, DName, DDescription, NEmployees);
+        return Objects.hash(DepId, DName, DDescription, NEmployees);
     }
 }

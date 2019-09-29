@@ -3,7 +3,7 @@ import java.util.Objects;
 
 
 public class Users {
-    private int id;
+    private int usersId;
     private String name;
     private String title;
     private String duty;
@@ -14,7 +14,9 @@ public class Users {
         this.duty = duty;
     }
 
-    public int getId() { return id; }
+    public int getUsersId() { return usersId; }
+
+    public void setUserId(int userId) { this.usersId = usersId; }
 
     public String getName() { return name; }
 
@@ -33,7 +35,7 @@ public class Users {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Users users = (Users) o;
-        return id == users.id &&
+        return usersId == users.usersId &&
                 Objects.equals(name, users.name) &&
                 Objects.equals(title, users.title) &&
                 Objects.equals(duty, users.duty);
@@ -41,6 +43,6 @@ public class Users {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, title, duty);
+        return Objects.hash(usersId, name, title, duty);
     }
 }
