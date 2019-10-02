@@ -4,11 +4,8 @@
 
 ## Description
 
-This is an app that allows the user to make list of animals and add them to the database, moreover to track endangered animals sighted in the wild.
+This is an app that the users to display notices, identify department and add user in the department all those are added into the database to the database, 
 
-Project which I am provided with the code containing the basic classes, Spark setup, HandlebarsTemplateEngine, hbs template structure, routing in App.java, tests, and database setup instructions. 
-
-The Forest Service is considering a proposal from a timber company to clearcut a nearby forest of Douglas Fir. Before this proposal may be approved, they must complete an environmental impact study. This application was developed to allow Rangers to track wildlife sightings in the area.
 
 # Install
 
@@ -35,11 +32,11 @@ The Forest Service is considering a proposal from a timber company to clearcut a
     
    1. You will need Internet connection.
 
-   2. You need to get into the Wildlife-Tracker Repository.
+   2. You need to get into the Rest_api Repository.
     
-     Link:-> https://github.com/Sangwa-C/Wildlife-Tracker.git
+     Link:-> https://github.com/Sangwa-C/Rest_api.git
         
-   3. From there you can access the Wildlife-Tracker.
+   3. From there you can access the Rest_api project.
     
    4. Clone the project.
     
@@ -53,21 +50,30 @@ The Forest Service is considering a proposal from a timber company to clearcut a
 ## Manual Database Creation
 To create the necessary databases, launch postgres, then psql, and run the following commands:
 
-* CREATE DATABASE wildlife_tracker;
-* \c wildlife_tracker;
-* CREATE TABLE animals (id serial PRIMARY KEY, name varchar);
-* CREATE TABLE sight  CREATE TABLE sightings (id SERIAL PRIMARY KEY,name varchar,location varchar,rangeName varchar,health varchar, age varchar);
-* CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+* CREATE DATABASE rest_api;
+  \c rest_api;
+  
+* CREATE TABLE userer(id SERIAL PRIMARY KEY,name VARCHAR,title VARCHAR,duty VARCHAR,dname VARCHAR);
+  
+* CREATE TABLE news(id SERIAL PRIMARY KEY, header VARCHAR, content VARCHAR,author VARCHAR);
+  
+* CREATE TABLE department(id SERIAL PRIMARY KEY,DName VARCHAR,DDescription VARCHAR,NEmployees VARCHAR);
+  
+* CREATE TABLE user_in_department(id SERIAL PRIMARY KEY,usersId INTEGER,DepId INTEGER);
 
 ## BDD
 
-**The program should allow the user to add an Animal.**
+**The program should allow the user to add Department**
 
-    Input Example: "Animals's Name: Zebra"
+    Input Example: "Department's name: Human Resources"
+                   "Department's Cause: Recruitment"
+                   "Number of Employees: 45"
                    
-**The program should return when the user add an animals to the database** 
+**The program should return when the user  the database** 
 
-    Output Example: "Animals's Name: Zebra"
+    Output Example: "Department's name: Human Resources"
+                    "Department's Cause: Recruitment"
+                    "Number of Employees: 45"
  
  **The program should allow the user to report an endangered animal**
  
