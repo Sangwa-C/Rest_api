@@ -1,0 +1,43 @@
+
+{{#partial "content"}}
+
+    <div class="well" style="margin-top:180px;">
+        <center>
+            <h1>Organisational Department Form!</h1>
+            <small> ~For every minute spent organizing, an hour is earned~ </small>
+
+        </center><br><br>
+
+        <center>
+
+            <form action="/dep_list" method="post">
+
+                <div class="form-group">
+                    <label for="dname"> Department's Name</label>
+                    <input id="dname" name="dname" type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="ddescription"> Department's Description</label>
+                    <input id="ddescription" name="ddescription" type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="nemployees"> Employees Number </label>
+                    <input id="nemployees" name="nemployees" type="text" class="form-control" >
+                </div>
+
+
+                <button type="submit" class="btn btn-success">Add Department</button><br><br>
+
+            </form>
+
+            <p>View <a href="/dep_list">Department list</a></p>
+        </center>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
+
+
+

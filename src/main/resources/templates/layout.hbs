@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Organisation{{/block}}</title>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<style>
+    .footer {
+        padding-top:10px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height:40px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        margin-top:10px;
+    }
+</style>
+
+
+</head>
+<body>
+
+<!--<div class="text">-->
+<!--    <nav>-->
+<!--        <ul class="nav nav-tabs">-->
+<!--            <li><a href="/">HOME</a></li>-->
+<!--            <li><a href="/dep_form">Department</a></li>-->
+<!--            <li><a href="/listanimal">View Animals</a></li>-->
+<!--            <li><a href="/sighting">Post Animal Sighting</a></li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+<!--</div>-->
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="/dep_form">ADD Departments</a></li>
+            <li><a href="/dep_list">VIEW Departments</a></li>
+            <li><a href="/News_form">Add News</a></li>
+            <li><a href="/news_list">Notice Board</a></li>
+            <li><a href="/Users_form">Add User</a></li>
+            <li><a href="/Users_list">View Users List</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<div class="container">
+    <!--begin main template-->
+
+
+    <div class="col-md-12">
+        {{#block "content"}}
+        {{/block}}
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>All Right Reserved © 2019</p>
+</div>
+
+
+<!--end main template-->
+{{#block "footer"}}
+
+
+
+
+    </body>
+    </html>
+{{/block}}

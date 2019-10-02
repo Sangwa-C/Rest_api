@@ -1,0 +1,39 @@
+
+{{#partial "content"}}
+
+    <div class="well" style="margin-top:180px;">
+        <center>
+            <h1>Track Users!</h1>
+            <small>~For every minute spent organizing, an hour is earned~</small>
+
+        </center><br><br>
+
+        <center>
+            <form action="/dep_list" method="post">
+
+                <div class="form-group">
+                    <label for="name"> User's Name</label>
+                    <input id="name" name="name" type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="title"> User's Title</label>
+                    <input id="title" name="title" type="title" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="duty"> User's Duty</label>
+                    <input id="duty" name="duty" type="duty" class="form-control" >
+                </div>
+
+                <button type="submit" class="btn btn-success">Add Department</button><br><br>
+
+            </form>
+
+            <p>View <a href="/news_list">User's List</a></p>
+        </center>
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}

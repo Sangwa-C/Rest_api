@@ -1,0 +1,25 @@
+
+{{#partial "content"}}
+
+
+    {{#if department}}
+        {{#each department}}
+
+            <div class="well" style="text-align:center">
+                <small style="font-size:1em; text-align:center"> ~For every minute spent organizing, an hour is earned~  </small><br><br>
+                <p> Department's name: {{dname}} </p>
+                <p> Department's Cause: {{ddescription }} </p>
+                <p> Number of  Employees: {{ nemployees }} </p>
+            </div>
+
+        {{else}}
+
+            <h1>blah blah</h1>
+
+
+        {{/each}}
+    {{/if}}
+
+{{/partial}}
+
+{{> layout.hbs}}

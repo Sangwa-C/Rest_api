@@ -1,0 +1,41 @@
+
+{{#partial "content"}}
+
+    <div class="well" style="margin-top:180px;">
+        <center>
+            <h1>Track News Portal!</h1>
+            <small>~For every minute spent organizing, an hour is earned~</small>
+
+        </center><br><br>
+
+        <center>
+
+            <form action="/news_list" method="post">
+
+                <div class="form-group">
+                    <label for="header"> Header </label>
+                    <input id="header" name="header" type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="content"> content </label>
+                    <input id="content" name="content" type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label for="author"> Poster's Name</label>
+                    <input id="author" name="author" type="text" class="form-control" >
+                </div>
+
+
+                <button type="submit" class="btn btn-success">Post News</button><br><br>
+
+            </form>
+
+            <p>View <a href="/news_list"> Notice Bord </a></p>
+        </center>
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}
