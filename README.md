@@ -57,9 +57,8 @@ To create the necessary databases, launch postgres, then psql, and run the follo
   
 * CREATE TABLE news(id SERIAL PRIMARY KEY, header VARCHAR, content VARCHAR,author VARCHAR);
   
-* CREATE TABLE department(id SERIAL PRIMARY KEY,DName VARCHAR,DDescription VARCHAR,NEmployees VARCHAR);
-  
-* CREATE TABLE user_in_department(id SERIAL PRIMARY KEY,usersId INTEGER,DepId INTEGER);
+* CREATE TABLE department(id SERIAL PRIMARY KEY,dname VARCHAR,ddescription VARCHAR,nemployees VARCHAR);
+ 
 
 ## BDD
 
@@ -69,19 +68,31 @@ To create the necessary databases, launch postgres, then psql, and run the follo
                    "Department's Cause: Recruitment"
                    "Number of Employees: 45"
                    
-**The program should return when the user  the database** 
+**The program should return when the user adds the department the database** 
 
     Output Example: "Department's name: Human Resources"
                     "Department's Cause: Recruitment"
                     "Number of Employees: 45"
  
- **The program should allow the user to report an endangered animal**
+**The program should allow the user to publish news**
  
-         Input Example: "Animals's Name: Zebra"   
-                        "Animal's Health: healthy"
-                        "Animals's Age: New born"
-                        "Animal's location: zone A"
-                        "Reporter's Name: Chelsea"
+         Input Example: News Header: Meeting
+                        Information: board meeting in Sangwa Hall at 9:00h
+                        Said by: Chelsea
+ 
+**The program should allow the user to publish news**
+
+          Output Example: News Header: Meeting
+                        Information: board meeting in Sangwa Hall at 9:00h
+                        Said by: Chelsea
+
+**The program should allow the user to register**    
+           
+           Input Example:User Name: Sangwa
+                         User Title: manager
+                         User's Duty: managing
+                         User's Department: Operations management
+                          
     
 ## Known Bugs
 
@@ -95,20 +106,20 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 <p>
 <g-emoji class="q-emoji"  alias="bug" >
     <img class="emoji" alt="bug" height="20" width="20"  src="https://github.githubassets.com/images/icons/emoji/unicode/1f41e.png"  >
- </g-emoji>   Can submit empty or invalid characters in a non-endangered animal sighting report.
+ </g-emoji>   Can submit empty or invalid characters in adding department.
 </p> 
 
  <p>    
 <g-emoji class="q-emoji"  alias="bug" >
     <img class="emoji" alt="bug" height="20" width="20"  src="https://github.githubassets.com/images/icons/emoji/unicode/1f41e.png">
- </g-emoji> Can submit empty or invalid characters in an endangered animal sighting report.
+ </g-emoji> Can submit empty or invalid characters in an adding a notice.
 </p>
 
 
 <p>
 <g-emoji class="q-emoji"  alias="bug" >
     <img class="emoji" alt="bug" height="20" width="20"  src="https://github.githubassets.com/images/icons/emoji/unicode/1f41e.png">
- </g-emoji> User can submit empty or invalid characters when adding an animal to the system.
+ </g-emoji> User can submit empty or invalid characters when registering a user.
 </p>
 
 
@@ -128,7 +139,7 @@ To create the necessary databases, launch postgres, then psql, and run the follo
 <p>
 <g-emoji class="q-emoji"  alias="bug" >
     <img class="emoji" alt="bug" height="20" width="20"  src="https://github.githubassets.com/images/icons/emoji/unicode/1f41e.png">
- </g-emoji> Recording date of sighting not displayed in detail
+ </g-emoji> Recording dates aren't recorded.
 </p>
 
 
