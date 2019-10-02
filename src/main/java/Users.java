@@ -9,11 +9,21 @@ public class Users {
     private String name;
     private String title;
     private String duty;
+    private String dname;
 
-    public Users(String name, String title, String duty) {
+    public Users(String name, String title, String duty, String dname) {
         this.name = name;
         this.title = title;
         this.duty = duty;
+        this.dname = dname;
+    }
+
+    public String getDname() {
+        return dname;
+    }
+
+    public void setDname(String dname) {
+        this.dname = dname;
     }
 
     public static int getId() {
@@ -48,19 +58,20 @@ public class Users {
         this.duty = duty;
     }
 
-    public void save() {
-        try (Connection con = DB.sql2o.open()) {
-            String cece = "INSERT INTO userer(DepId,usersId) VALUES (:DepId,:usersId) ";
-            con.createQuery(cece)
-                    .addParameter("DeptId", Departments.getId())
-                    .addParameter("usersId", Users.getId())
-                    .throwOnMappingFailure(false)
-                    .executeUpdate();
-        } catch (Sql2oException no) {
-            System.out.println(no);
+        public void save() {
+            try (Connection con = DB.sql2o.open()) {
+                String cece = "INSERT INTO department(name,title,duty,dname)VALUES(:name,:title,:duty,:dname);";
+                this.id = (int) con.createQuery(cece, true)
+                        .addParameter("name", this.name)
+                        .addParameter("title", this.title)
+                        .addParameter("duty", this.duty)
+                        .addParameter("dname", this.dname)
+                        .executeUpdate()
+                        .getKey();
+            } catch (Sql2oException NO_IN_User) {
+                System.out.println(NO_IN_User);
+            }
         }
-
-    }
 
     public static List<Users> getThemAll() {
         try (Connection con = DB.sql2o.open()) {

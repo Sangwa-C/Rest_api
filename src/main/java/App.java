@@ -77,29 +77,37 @@ public class App {
 
 
 
-//        get("/Users_form", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-////            List<Users> users = Users.getThemAll();
-////            model.put("Users", users);
-//            return new ModelAndView(model, "Users_form.hbs");
-//        },new HandlebarsTemplateEngine());
+        get("/Users_form", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            List<Users> users = Users.getThemAll();
+            model.put("Users", users);
+            return new ModelAndView(model, "Users_form.hbs");
+        },new HandlebarsTemplateEngine());
 
-//            post("/Users_form", (request, response) -> {
-//            Map<String, Object> model = new HashMap<>();
-//                name;
-//                this.title = title;
-//                this.duty = duty;
-//            String content = request.queryParams("content");
-//            String author = request.queryParams("author");
-//
-//            News newNews= new News(content, author);
-//
-//            model.put("content", content);
-//            model.put("DDescription", author);
-//
-//            newNews.save();
-//            return new ModelAndView(model, "Users_form.hbs");
-//        }, new HandlebarsTemplateEngine());
+        get("/Users_list", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            List<Users> users = Users.getThemAll();
+            model.put("Users", users);
+            return new ModelAndView(model, "Users_list.hbs");
+        },new HandlebarsTemplateEngine());
+
+
+        post("/Users_form", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+
+            String name = request.queryParams("name");
+            String title = request.queryParams("title");
+            String duty = request.queryParams("duty");
+
+            Users newUser= new Users(name,title, duty);
+
+            model.put("name", name);
+            model.put("title", title);
+            model.put("duty", duty);
+
+            newUser.save();
+            return new ModelAndView(model, "Users_form.hbs");
+        }, new HandlebarsTemplateEngine());
 
 
 

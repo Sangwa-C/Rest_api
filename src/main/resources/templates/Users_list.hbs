@@ -1,0 +1,25 @@
+{{#partial "content"}}
+
+    {{#if users}}
+        {{#each users}}
+
+            <div class="well" style="text-align:center">
+                <small style="font-size:1em; text-align:center"> ~For every minute spent organizing, an hour is earned~  </small><br><br>
+
+                <p> News Header: {{ name }} </p>
+                <p> Information {{ title }} </p>
+                <p> Said by: {{ users }} </p>
+            </div>
+
+        {{else}}
+
+            <h1>blah blah</h1>
+
+
+        {{/each}}
+    {{/if}}
+
+
+{{/partial}}
+
+{{> layout.hbs}}

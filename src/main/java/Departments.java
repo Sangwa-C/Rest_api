@@ -51,7 +51,7 @@ public class Departments {
 
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String cece = "INSERT INTO department(dname,ddescription,nemployees)VALUES(:dname,:ddescription,:nemployees);";
+            String cece = "INSERT INTO userer(dname,ddescription,nemployees)VALUES(:dname,:ddescription,:nemployees);";
             this.id = (int) con.createQuery(cece, true)
                     .addParameter("dname", this.dname)
                     .addParameter("ddescription", this.ddescription)
