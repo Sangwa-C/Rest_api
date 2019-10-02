@@ -9,7 +9,7 @@
         </center><br><br>
 
         <center>
-            <form action="/users_list" method="post">
+            <form action="/Users_list" method="post">
 
                 <div class="form-group">
                     <label for="name"> User's Name</label>
@@ -26,13 +26,24 @@
                     <input id="duty" name="duty" type="duty" class="form-control" >
                 </div>
 
-                <button type="submit" class="btn btn-success">Add Department</button><br><br>
+                <div class="form-group-block">
+                    <label for="dname"> User's Department</label><br>
+                    <select name="dname" id="dname" style=" padding:10px; padding-right: 170px; border-radius:5px; color:black; text-align:center; ">
+                        {{#each department}}
+
+                            <option value="{{ dname }}">{{ dname }}</option>
+
+                        {{/each}}
+                    </select><br><br>
+                </div>
+
+                <button type="submit" class="btn btn-success">Add User</button><br><br>
 
             </form>
 
             <p>View <a href="/Users_list">User's List</a></p>
         </center>
-    </div>
+    </div>5
 
 {{/partial}}
 

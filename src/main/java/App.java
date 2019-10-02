@@ -79,37 +79,37 @@ public class App {
 
         get("/Users_form", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            List<Users> users = Users.getThemAll();
-            model.put("Users", users);
+            List<Departments> department = Departments.getThemAll();
+            model.put("department",department);
             return new ModelAndView(model, "Users_form.hbs");
+
         },new HandlebarsTemplateEngine());
 
-        get("/Users_list", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            List<Users> users = Users.getThemAll();
-            model.put("Users", users);
-            return new ModelAndView(model, "Users_list.hbs");
-        },new HandlebarsTemplateEngine());
-
-
-        post("/Users_form", (request, response) -> {
+        post("/Users_list", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
 
             String name = request.queryParams("name");
             String title = request.queryParams("title");
             String duty = request.queryParams("duty");
+            String dname = request.queryParams("dname");
 
-            Users newUser= new Users(name,title, duty);
+            Users newUser= new Users(name,title, duty,dname);
 
             model.put("name", name);
             model.put("title", title);
             model.put("duty", duty);
+            model.put("dname", dname);
 
             newUser.save();
-            return new ModelAndView(model, "Users_form.hbs");
+            return new ModelAndView(model, "Users_list.hbs");
         }, new HandlebarsTemplateEngine());
 
-
+        get("/Users_list", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            List<Users> users = Users.getThemAll();
+            model.put("users", users);
+            return new ModelAndView(model, "Users_list.hbs");
+        },new HandlebarsTemplateEngine());
 
     }
 }
